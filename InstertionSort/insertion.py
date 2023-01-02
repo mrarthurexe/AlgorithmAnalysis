@@ -4,18 +4,18 @@ def insertion_sort(array):
     valor_chave = array[i]
 
     # Armazenamos o índice ao qual estaremos apontando no momento
-    current_index = i
+    indice_apontado = i
 
     # No caso do índice apontado ser maior que zero e o valor da posição anterior for maior que o valor da chave, então:
-    while current_index > 0 and array[current_index - 1] > valor_chave:
+    while indice_apontado > 0 and array[indice_apontado - 1] > valor_chave:
       # Define o valor contido na posição apontada como sendo o valor da posição anterior.
-      array[current_index] = array[current_index - 1]
+      array[indice_apontado] = array[indice_apontado - 1]
       # Volta uma posição no array para comparar com o próximo valor anterior
-      current_index -= 1
+      indice_apontado -= 1
       
     # Armazena o valor chave na posição apontada no momento, já que se o while anterior não for iniciado,
     # quer dizer que o elemento está na posição correta.
-    array[current_index] = valor_chave
+    array[indice_apontado] = valor_chave
     
   return array
 print(insertion_sort([5, 2, 4, 6, 1, 3]))
