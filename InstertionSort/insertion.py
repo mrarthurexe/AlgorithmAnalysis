@@ -1,22 +1,21 @@
-ordenar = [5, 4, 2, 4, 1, 3]
-x = 10
-def insertionSort(array):
-    
-    for i in range(1, len(array)):
-        chave = array[i]
-        j = i - 1
-        
-        #Utilizamos a chave sendo a respectiva posição no array.
-        #Comparamos a chave com cada elemento da esquerda, que é representado por "j", sendo a posição atual -1. 
-        
-        while j >= 0 and chave < array[j]:
-            #Quando a chave for menor, j + 1 que será a posição da chave, é substituida pelo valor de [j]
-            array[j + 1] = array[j]
-            j = j - 1
-        
-        # Aqui j + 1 receberá o valor da chave, que se for menor, irá para a posição atual do array[j]
-        array[j + 1] = chave
+def insertion_sort(array):
+  for i in range(1, len(array)):
+    # Colocamos como chave o valor do elemento atual dada a posição(i)
+    valor_chave = array[i]
 
-insertionSort(ordenar)
-print('Lista ordenada:')
-print(ordenar)
+    # Armazenamos o índice ao qual estaremos apontando no momento
+    current_index = i
+
+    # No caso do índice apontado ser maior que zero e o valor da posição anterior for maior que o valor da chave, então:
+    while current_index > 0 and array[current_index - 1] > valor_chave:
+      # Define o valor contido na posição apontada como sendo o valor da posição anterior.
+      array[current_index] = array[current_index - 1]
+      # Volta uma posição no array para comparar com o próximo valor anterior
+      current_index -= 1
+      
+    # Armazena o valor chave na posição apontada no momento, já que se o while anterior não for iniciado,
+    # quer dizer que o elemento está na posição correta.
+    array[current_index] = valor_chave
+    
+  return array
+print(insertion_sort([5, 2, 4, 6, 1, 3]))
