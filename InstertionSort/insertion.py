@@ -1,3 +1,4 @@
+# obs: O(n²)
 def insertion_sort(array):
   for i in range(1, len(array)):
     # Colocamos como chave o valor do elemento atual dada a posição(i)
