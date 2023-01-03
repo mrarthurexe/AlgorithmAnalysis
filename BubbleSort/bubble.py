@@ -1,4 +1,4 @@
-# obs: Este algoritmo de ordenação não é o mais adequado para grande parte dos casos.
+# obs: Este algoritmo de ordenação não é o mais adequado para grande parte dos casos O(n²).
 def bubble_sort(array):
     # Percorremos o array(i)
     for i in range(len(array)):
